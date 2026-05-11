@@ -16,7 +16,7 @@ function LoadingScreen() {
         <div className="w-20 h-20 border-4 border-primary border-t-transparent rounded-full animate-spin absolute top-0" />
       </div>
       <div className="text-center space-y-2">
-        <p className="text-foreground text-xl font-semibold">Muhammad Saad</p>
+        <p className="text-foreground text-xl font-semibold">Jaikeerthi</p>
         <p className="text-foreground/60 text-sm">Loading portfolio...</p>
       </div>
     </div>

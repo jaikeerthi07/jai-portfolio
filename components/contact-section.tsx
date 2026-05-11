@@ -1,7 +1,7 @@
 "use client"
 
 import { useInView } from "@/hooks/use-in-view"
-import { Mail, Github, Linkedin, MapPin, Clock } from "lucide-react"
+import { Mail, Github, Linkedin, MapPin, Clock, Phone } from "lucide-react"
 import data from "@/data/portfolio.json"
 
 export function ContactSection() {
@@ -36,6 +36,23 @@ export function ContactSection() {
                 </a>
               </div>
             </div>
+
+            {data.personal.phone && (
+              <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors">
+                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                  <Phone className="w-6 h-6 text-primary" />
+                </div>
+                <div>
+                  <p className="text-sm text-muted-foreground">Phone</p>
+                  <a
+                    href={`tel:${data.personal.phone}`}
+                    className="text-foreground hover:text-primary transition-colors"
+                  >
+                    {data.personal.phone}
+                  </a>
+                </div>
+              </div>
+            )}
 
             <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-primary/50 transition-colors">
               <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
@@ -88,8 +105,9 @@ export function ContactSection() {
         </div>
 
         <div
-          className={`mt-16 pt-8 border-t border-border text-center transition-all duration-700 delay-400 ${inView ? "opacity-100" : "opacity-0"}`}
+          className={`mt-16 pt-8 border-t border-border flex flex-col items-center justify-center gap-4 transition-all duration-700 delay-400 ${inView ? "opacity-100" : "opacity-0"}`}
         >
+          <img src="/jaikeerthi.png" alt="Jaikeerthi" className="w-16 h-16 rounded-full object-cover border-2 border-primary/50" />
           <p className="text-muted-foreground text-sm">{data.personal.copyright}</p>
         </div>
       </div>

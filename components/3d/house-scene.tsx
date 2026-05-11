@@ -1241,12 +1241,19 @@ function AboutRoom({ position, isDark = true }: { position: [number, number, num
 
   return (
     <Room position={position} color={isDark ? "#0f172a" : "#f1f5f9"} isDark={isDark}>
+      {/* Profile Photo Frame */}
+      <FloatingFrame position={[-3.5, 3, -5]} size={[3.5, 4.5]} isDark={isDark}>
+        <div className="p-2 flex items-center justify-center h-full">
+          <img src="/jaikeerthi.png" alt="Profile" className="w-[300px] h-[300px] object-cover rounded-xl border-4 border-teal-500/50 shadow-2xl mx-auto" />
+        </div>
+      </FloatingFrame>
+
       {/* Main About Frame */}
-      <FloatingFrame position={[0, 3, -5]} size={[10, 4]} isDark={isDark}>
-        <div className="p-4 text-left">
-          <h2 className="text-teal-400 text-2xl font-bold mb-3">{about.heading}</h2>
+      <FloatingFrame position={[2.5, 3, -5]} size={[6.5, 4.5]} isDark={isDark}>
+        <div className="p-4 text-left h-full flex flex-col justify-center">
+          <h2 className="text-teal-400 text-2xl font-bold mb-3 text-center">{about.heading}</h2>
           {about.paragraphs.map((p, i) => (
-            <p key={i} className={`${isDark ? "text-gray-300" : "text-gray-700"} text-sm mb-2`}>
+            <p key={i} className={`${isDark ? "text-gray-300" : "text-gray-700"} text-sm mb-2 text-center`}>
               {p}
             </p>
           ))}
@@ -1310,22 +1317,39 @@ function ExperienceRoom({ position, isDark = true }: { position: [number, number
 
   return (
     <Room position={position} color={isDark ? "#172554" : "#dbeafe"} isDark={isDark}>
-      <FloatingFrame position={[0, 4.5, -5]} size={[6, 1.5]} isDark={isDark}>
+      <FloatingFrame position={[0, 5.2, -5]} size={[6, 1.2]} isDark={isDark}>
         <h2 className="text-teal-400 text-2xl font-bold">{experience.heading}</h2>
       </FloatingFrame>
 
+      {/* Profile Photo in Center */}
+      <FloatingFrame position={[0, 1.8, -4.5]} size={[3.5, 4]} isDark={isDark}>
+        <div className="p-2 flex items-center justify-center h-full">
+          <img src="/jaikeerthi.png" alt="Profile" className="w-[280px] h-[280px] object-cover rounded-xl border-4 border-blue-500/50 shadow-2xl mx-auto" />
+        </div>
+      </FloatingFrame>
+
       {experience.items.map((item, i) => (
-        <FloatingFrame key={i} position={[i === 0 ? -3 : 3, 1.5, -4]} size={[5, 4]} isDark={isDark}>
+        <FloatingFrame 
+          key={i} 
+          position={[i % 2 === 0 ? -4.5 : 4.5, i < 2 ? 3.2 : 0.4, -4]} 
+          size={[4.5, 2.8]} 
+          isDark={isDark}
+        >
           <div className="p-3 text-left">
             <div className="flex items-center gap-2 mb-2">
               <span className={`w-2 h-2 rounded-full ${item.type === "work" ? "bg-teal-400" : "bg-purple-400"}`} />
-              <span className={`${isDark ? "text-gray-400" : "text-gray-600"} text-xs`}>{item.period}</span>
+              <span className={`${isDark ? "text-gray-400" : "text-gray-600"} text-xs font-semibold`}>{item.period}</span>
             </div>
-            <h3 className={`${isDark ? "text-white" : "text-slate-800"} text-base font-semibold`}>{item.title}</h3>
-            <p className="text-teal-400 text-sm mb-2">{item.company}</p>
+            <h3 className={`${isDark ? "text-white" : "text-slate-800"} text-lg font-bold leading-tight`}>{item.title}</h3>
+            <div className="flex items-center gap-3 mb-2 mt-1">
+              <p className="text-teal-400 text-sm font-medium m-0">{item.company}</p>
+              {item.company === "REDDOT" && (
+                <img src="/reddot logo.png" alt="REDDOT Logo" className="h-6 w-auto object-contain rounded" />
+              )}
+            </div>
             <ul className="space-y-1">
               {item.description.slice(0, 3).map((desc, j) => (
-                <li key={j} className={`${isDark ? "text-gray-300" : "text-gray-700"} text-xs`}>
+                <li key={j} className={`${isDark ? "text-gray-300" : "text-gray-700"} text-xs leading-snug`}>
                   • {desc}
                 </li>
               ))}
@@ -1405,6 +1429,13 @@ function ContactRoom({ position, isDark = true }: { position: [number, number, n
             >
               <Mail size={20} />
               <span>{personal.email}</span>
+            </a>
+            <a
+              href={`tel:${personal.phone}`}
+              className="flex items-center justify-center gap-3 bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 py-3 px-4 rounded-lg transition-colors"
+            >
+              <Smartphone size={20} />
+              <span>{personal.phone}</span>
             </a>
 
             <div className="flex justify-center gap-6">

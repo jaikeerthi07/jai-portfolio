@@ -1,16 +1,24 @@
 {
   "personal": {
-    "name": "Muhammad Saad",
-    "title": "Software Engineer",
+    "name": "Jaikeerthi",
+    "title": "AI & ML Engineer | Full Stack Developer",
     "greeting": "Hello, I'm",
-    "tagline": "I build accessible, pixel-perfect digital experiences.",
-    "specializations": ["ERPNext", "Flutter", "React Native", "Backend Integrations"],
-    "email": "muhammadsaadsafdar2005@gmail.com",
-    "github": "https://github.com/saadsafda",
-    "linkedin": "https://linkedin.com/in/muhammad-saad2005/",
-    "location": "Available for Remote Work",
-    "availability": "Open to morning opportunities",
-    "copyright": "© 2025 Muhammad Saad. All rights reserved."
+    "tagline": "Building intelligent AI systems, scalable web applications, and next-generation automation platforms.",
+    "specializations": [
+      "Generative AI",
+      "Agentic AI",
+      "Machine Learning",
+      "Deep Learning",
+      "Data Science",
+      "Full Stack Development"
+    ],
+    "email": "jaikeerthi156@gmail.com",
+    "phone": "8072163133",
+    "github": "https://github.com/jaikeerthi07",
+    "linkedin": "https://www.linkedin.com/in/jaikeerthi-r-03931b341",
+    "location": "Available for Projects",
+    "availability": "Open to opportunities",
+    "copyright": "Designed and Developed by Jaikeerthi"
   },
   "navigation": [
     { "name": "About", "href": "#about" },
@@ -21,18 +29,25 @@
   ],
   "about": {
     "sectionTitle": "About Me",
-    "heading": "Building real-world business solutions",
+    "heading": "Driven by innovation and problem-solving",
     "paragraphs": [
-      "I am a software engineer with strong hands-on experience in ERPNext/Frappe development, mobile applications, and system integrations.",
-      "I work on real-world business solutions including payroll systems, HMRC RTI integrations, POS real-time systems, and data-driven mobile applications.",
-      "I prefer clean architecture, scalable solutions, and practical problem-solving."
+      "I am a passionate AI & Machine Learning Engineer and Full Stack Developer specializing in Generative AI, AI Agents, Machine Learning, Deep Learning, Data Science, Data Analytics, Web Development, Embedded Systems, and IoT technologies. I focus on creating innovative, scalable, and intelligent solutions that solve real-world problems.",
+      "Driven by innovation and problem-solving, I specialize in developing AI-powered systems, automation platforms, and modern web applications. My expertise includes Generative AI, Prompt Engineering, Agentic AI systems, Machine Learning, Deep Learning, Data Analytics, and Full Stack Development. I am passionate about building intelligent technologies that improve efficiency, automation, and digital transformation."
     ],
-    "highlights": ["clean architecture", "scalable solutions", "practical problem-solving"],
+    "highlights": [
+      "Generative AI",
+      "Prompt Engineering",
+      "Agentic AI systems",
+      "Machine Learning",
+      "Deep Learning",
+      "Data Analytics",
+      "Full Stack Development"
+    ],
     "stats": [
-      { "value": "5+", "label": "Years Experience" },
-      { "value": "20+", "label": "Projects Completed" },
+      { "value": "Founder", "label": "REDDOT" },
       { "value": "10+", "label": "Technologies" },
-      { "value": "100%", "label": "Client Satisfaction" }
+      { "value": "AI/ML", "label": "Specialist" },
+      { "value": "Full Stack", "label": "Developer" }
     ]
   },
   "skills": {
@@ -40,51 +55,88 @@
     "heading": "Technologies I Work With",
     "categories": [
       {
-        "title": "Backend & ERP",
+        "title": "Artificial Intelligence & Machine Learning",
         "skills": [
-          "ERPNext / Frappe Framework",
-          "Python",
-          "HMRC RTI (FPS, EPS, NVR, EYU)",
-          "UK Payroll Systems",
-          "REST APIs & Webhooks"
+          "Artificial Intelligence",
+          "Generative AI",
+          "Agentic AI",
+          "Prompt Engineering",
+          "Machine Learning",
+          "Deep Learning",
+          "Large Language Models (LLMs)"
         ]
       },
       {
-        "title": "Mobile Development",
-        "skills": ["Flutter", "React Native", "Socket.IO & TCP", "Maps & Location Tracking", "Background Services"]
+        "title": "Data Science",
+        "skills": [
+          "Data Science",
+          "Data Analytics"
+        ]
       },
       {
-        "title": "Frontend",
-        "skills": ["React.js", "HTMX", "Data Tables & Forms", "Responsive Design", "UI/UX Implementation"]
+        "title": "Full Stack Development",
+        "skills": [
+          "Full Stack Development",
+          "Frontend Development",
+          "Backend Development",
+          "Python",
+          "JavaScript",
+          "React.js",
+          "Node.js",
+          "REST API Development",
+          "Database Management"
+        ]
       },
       {
-        "title": "Databases & Tools",
-        "skills": ["MySQL / MariaDB", "MongoDB", "Git", "Postman", "Windows & macOS"]
+        "title": "Engineering & IoT",
+        "skills": [
+          "Automation Systems",
+          "Embedded Systems",
+          "Internet of Things (IoT)"
+        ]
       }
     ]
   },
   "experience": {
-    "sectionTitle": "Experience",
+    "sectionTitle": "Experience & Achievements",
     "heading": "My Professional Journey",
     "items": [
       {
         "type": "work",
-        "title": "Software Engineer",
-        "company": "Private Company",
+        "title": "Founder",
+        "company": "REDDOT",
         "period": "Present",
         "description": [
-          "Developed and customized ERPNext modules for HR, Payroll, Sales, and Inventory",
-          "Built a complete UK Payroll RTI solution integrated with HMRC",
-          "Designed Postman collections for RTI testing (TPVS, ETS, LTS)",
-          "Implemented permission logic, advanced filtering, and custom workflows in Frappe"
+          "Founder of REDDOT, a technology-focused company specializing in AI Agents, Intelligent Automation, Generative AI, Machine Learning, Deep Learning, Data Science, Data Analytics, Web Development, Embedded Systems, IoT Solutions, and Internship Programs.",
+          "Focused on delivering innovative AI-driven solutions and next-generation technology services."
+        ]
+      },
+      {
+        "type": "work",
+        "title": "Full Stack Developer",
+        "company": "V4Sure IT Solutions",
+        "period": "6 Months",
+        "description": [
+          "Currently working as a Full Stack Developer at V4Sure IT Solutions, contributing to scalable web applications, backend systems, AI integrations, intelligent automation solutions, and responsive user interfaces."
         ]
       },
       {
         "type": "education",
-        "title": "Computer Science Student",
-        "company": "University of Karachi",
-        "period": "Ongoing",
-        "description": ["Studying computer science fundamentals", "Building practical projects alongside coursework"]
+        "title": "Mr India Bodybuilding Competition",
+        "company": "Achievement",
+        "period": "Junior Category",
+        "description": [
+          "Secured Third Place in the Junior Category at the Mr India Bodybuilding Competition."
+        ]
+      },
+      {
+        "type": "education",
+        "title": "International Chess Player",
+        "company": "Achievement",
+        "period": "Rating 1440",
+        "description": [
+          "International Chess Rated Player with an official chess rating of 1440."
+        ]
       }
     ]
   },
@@ -93,41 +145,41 @@
     "heading": "Featured Work",
     "items": [
       {
-        "title": "UK Payroll RTI Integration",
-        "description": "Complete RTI application supporting FPS, EPS, NVR, and EYU. HMRC-compliant XML generation and submission with error handling and validation.",
-        "tags": ["ERPNext", "Python", "HMRC", "XML"],
+        "title": "Fake Review Detection",
+        "description": "Developed an AI-powered machine learning system capable of detecting fake and spam reviews using natural language processing and predictive analytics.",
+        "tags": ["AI", "Machine Learning", "NLP", "Predictive Analytics"],
         "featured": true,
         "github": "#",
         "demo": "#"
       },
       {
-        "title": "Real-Time POS Order System",
-        "description": "Node.js TCP server with MongoDB. React Native TCP client for live order updates. Kitchen and table status synchronization.",
-        "tags": ["Node.js", "React Native", "MongoDB", "TCP"],
+        "title": "Jarvis AI",
+        "description": "Built an advanced AI assistant integrating automation workflows, intelligent response systems, memory architecture, and smart task execution capabilities.",
+        "tags": ["Agentic AI", "Automation", "NLP", "LLMs"],
         "featured": true,
         "github": "#",
         "demo": "#"
       },
       {
-        "title": "Smart Sales Manager",
-        "description": "Sales dashboard with analytics, customer and order management with secure login and role-based access.",
-        "tags": ["Flutter", "Firebase", "Analytics"],
+        "title": "Web Scraper Agent",
+        "description": "Created an intelligent automated web scraping agent for extracting, processing, and analyzing structured and unstructured web data efficiently.",
+        "tags": ["Automation", "Web Scraping", "Data Analysis", "Python"],
         "featured": true,
         "github": "#",
         "demo": "#"
       },
       {
-        "title": "Delivery & Map-Based Apps",
-        "description": "Live order tracking using flutter_map & geolocator. Draggable sheets with markers and order lists.",
-        "tags": ["Flutter", "Maps", "Geolocation"],
+        "title": "Customized LLM",
+        "description": "Developed customized large language model solutions optimized for domain-specific applications, automation systems, and intelligent AI workflows.",
+        "tags": ["Generative AI", "LLMs", "Prompt Engineering"],
         "featured": false,
         "github": "#",
         "demo": "#"
       },
       {
-        "title": "ERPNext Customizations",
-        "description": "Advanced search and filtering logic, role-based permissions for ESS and sales users, custom list pages and navigation.",
-        "tags": ["ERPNext", "Frappe", "Python"],
+        "title": "Commodity Forecasting Platform",
+        "description": "Designed a deep learning-based commodity forecasting platform focused on market volatility analysis, predictive intelligence, and financial trend forecasting.",
+        "tags": ["Deep Learning", "Data Analytics", "Financial Forecasting"],
         "featured": false,
         "github": "#",
         "demo": "#"
@@ -137,6 +189,6 @@
   "contact": {
     "sectionTitle": "Contact",
     "heading": "Let's Work Together",
-    "description": "I'm currently open to freelance and contract-based work. If you have a project in mind, let's talk!"
+    "description": "Interested in collaborating on AI systems, intelligent automation, machine learning solutions, or full stack development projects? Let's connect and build innovative technology solutions together."
   }
 }
