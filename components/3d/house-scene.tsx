@@ -40,13 +40,13 @@ const themeColors = {
     roomBg: "#0f172a",
   },
   light: {
-    floor: "#f1f5f9",
-    wall: "#e2e8f0",
-    desk: "#cbd5e1",
-    panel: "#f8fafc",
-    text: "#0f172a",
-    textMuted: "#475569",
-    roomBg: "#f1f5f9",
+    floor: "#f8fafc",
+    wall: "#f1f5f9",
+    desk: "#e2e8f0",
+    panel: "#ffffff",
+    text: "#020617",
+    textMuted: "#334155",
+    roomBg: "#f8fafc",
   },
 }
 
@@ -669,7 +669,9 @@ function UltrawideMonitor({
     "Databases & Tools": <Database className="w-6 h-6" />,
   }
 
-  const skillColors = ["#f472b6", "#818cf8", "#2dd4bf", "#fb923c"]
+  const skillColors = isDark 
+    ? ["#f472b6", "#818cf8", "#2dd4bf", "#fb923c"]
+    : ["#db2777", "#4f46e5", "#0d9488", "#ea580c"]
 
   return (
     <group position={position} rotation={rotation as any}>
@@ -716,8 +718,8 @@ function UltrawideMonitor({
             }}
           >
             <h3
-              className="text-xl font-bold mb-4 tracking-wide"
-              style={{ color: "#14b8a6", textShadow: isDark ? "0 0 10px #14b8a6" : "none" }}
+              className="text-2xl font-black mb-6 tracking-widest"
+              style={{ color: isDark ? "#14b8a6" : "#0d9488", textShadow: isDark ? "0 0 10px #14b8a6" : "none" }}
             >
               MY SKILLS
             </h3>
@@ -739,14 +741,14 @@ function UltrawideMonitor({
                     {category.skills.slice(0, 4).map((skill, j) => (
                       <span
                         key={j}
-                        className="text-sm px-3 py-1 rounded-full font-medium"
+                        className="text-xs px-2.5 py-1 rounded-md font-bold border"
                         style={{
-                          backgroundColor: `${skillColors[i]}25`,
+                          backgroundColor: isDark ? `${skillColors[i]}20` : `${skillColors[i]}15`,
                           color: isDark ? "#fff" : skillColors[i],
-                          border: `1px solid ${skillColors[i]}`,
+                          borderColor: `${skillColors[i]}40`,
                         }}
                       >
-                        {skill.split(" ")[0]}
+                        {skill}
                       </span>
                     ))}
                   </div>
@@ -762,16 +764,19 @@ function UltrawideMonitor({
               border: `2px solid ${isDark ? "#14b8a6" : "#0d9488"}`,
             }}
           >
-            <div className="flex items-center justify-center gap-4 mb-3">
-              <Terminal className="w-8 h-8" style={{ color: "#14b8a6" }} />
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Terminal className="w-10 h-10" style={{ color: isDark ? "#14b8a6" : "#0d9488" }} />
               <span
-                className="font-mono text-2xl font-bold"
-                style={{ color: "#14b8a6", textShadow: isDark ? "0 0 10px #14b8a6" : "none" }}
+                className="font-sans text-5xl font-black tracking-[0.3em]"
+                style={{ 
+                  color: isDark ? "#14b8a6" : "#0d9488", 
+                  textShadow: isDark ? "0 0 20px #14b8a6" : "0 1px 2px rgba(0,0,0,0.1)" 
+                }}
               >
-                WELCOME
+                JAIKEERTHI
               </span>
             </div>
-            <p className="font-mono text-base" style={{ color: isDark ? "#94a3b8" : "#475569" }}>
+            <p className="font-mono text-lg font-bold" style={{ color: isDark ? "#94a3b8" : "#1e293b" }}>
               {">"} Ready to code amazing things...
             </p>
             <div className="mt-3 flex gap-2 justify-center">
@@ -977,15 +982,16 @@ function ModernWallDisplay({ position, isDark = true }: { position: [number, num
       {/* Name text - much larger */}
       <Text
         position={[0, 1.5, 0.1]}
-        fontSize={1.1}
+        fontSize={1.3}
         color={colors.text}
         anchorX="center"
         anchorY="middle"
-        outlineWidth={0.02}
-        outlineColor={isDark ? "#000" : "#fff"}
+        outlineWidth={0.04}
+        outlineColor={isDark ? "rgba(0,0,0,0.5)" : "rgba(255,255,255,0.8)"}
         depthOffset={-1}
+        fontWeight="black"
       >
-        {personal.name}
+        {personal.name.toUpperCase()}
       </Text>
 
       {/* Decorative line under name */}
@@ -997,12 +1003,13 @@ function ModernWallDisplay({ position, isDark = true }: { position: [number, num
       {/* Title - larger */}
       <Text
         position={[0, 0.3, 0.1]}
-        fontSize={0.5}
-        color="#14b8a6"
+        fontSize={0.6}
+        color={isDark ? "#14b8a6" : "#0d9488"}
         anchorX="center"
         anchorY="middle"
         outlineWidth={0.02}
-        outlineColor={isDark ? "#000" : "#fff"}
+        outlineColor={isDark ? "rgba(0,0,0,0.3)" : "rgba(255,255,255,0.5)"}
+        fontWeight="bold"
       >
         {personal.title}
       </Text>
@@ -1124,9 +1131,9 @@ function EntranceRoom({ position, isDark = true }: { position: [number, number, 
       {/* Modern desk setup */}
       <ModernDesk position={[0, -1.5, -3]} isDark={isDark} />
 
-      {/* Dual ultrawide monitors - one showing skills */}
-      <UltrawideMonitor position={[-0.8, -0.2, -3.8]} rotation={[0, 0.15, 0]} showSkills={true} isDark={isDark} />
-      <UltrawideMonitor position={[0.8, -0.2, -3.8]} rotation={[0, -0.15, 0]} showSkills={false} isDark={isDark} />
+      {/* Dual ultrawide monitors - side by side with gap */}
+      <UltrawideMonitor position={[-1.6, -0.2, -3.8]} rotation={[0, 0.15, 0]} showSkills={true} isDark={isDark} />
+      <UltrawideMonitor position={[1.6, -0.2, -3.8]} rotation={[0, -0.15, 0]} showSkills={false} isDark={isDark} />
 
       <RealisticFlowerPot position={[-1.7, -1.35, -2.5]} />
 
@@ -1251,9 +1258,9 @@ function AboutRoom({ position, isDark = true }: { position: [number, number, num
       {/* Main About Frame */}
       <FloatingFrame position={[2.5, 3, -5]} size={[6.5, 4.5]} isDark={isDark}>
         <div className="p-4 text-left h-full flex flex-col justify-center">
-          <h2 className="text-teal-400 text-2xl font-bold mb-3 text-center">{about.heading}</h2>
+          <h2 className={`text-2xl font-black mb-4 text-center ${isDark ? "text-teal-400" : "text-teal-700"}`}>{about.heading}</h2>
           {about.paragraphs.map((p, i) => (
-            <p key={i} className={`${isDark ? "text-gray-300" : "text-gray-700"} text-sm mb-2 text-center`}>
+            <p key={i} className={`${isDark ? "text-slate-200" : "text-slate-900"} text-sm font-medium mb-3 text-center leading-relaxed`}>
               {p}
             </p>
           ))}
@@ -1265,8 +1272,8 @@ function AboutRoom({ position, isDark = true }: { position: [number, number, num
         {about.stats.map((stat, i) => (
           <FloatingFrame key={i} position={[(i - 1.5) * 3, 0, 0]} size={[2.2, 1.8]} isDark={isDark}>
             <div className="p-2">
-              <p className="text-teal-400 text-3xl font-bold">{stat.value}</p>
-              <p className={`${isDark ? "text-gray-400" : "text-gray-600"} text-xs`}>{stat.label}</p>
+              <p className={`text-3xl font-black ${isDark ? "text-teal-400" : "text-teal-700"}`}>{stat.value}</p>
+              <p className={`${isDark ? "text-slate-300" : "text-slate-900"} text-xs font-bold uppercase tracking-wider`}>{stat.label}</p>
             </div>
           </FloatingFrame>
         ))}
@@ -1284,7 +1291,7 @@ function SkillsRoom({ position, isDark = true }: { position: [number, number, nu
   return (
     <Room position={position} color={isDark ? "#1e1b4b" : "#e0e7ff"} isDark={isDark}>
       <FloatingFrame position={[0, 4.5, -5]} size={[6, 1.5]} isDark={isDark}>
-        <h2 className="text-teal-400 text-2xl font-bold">{skills.heading}</h2>
+        <h2 className={`text-2xl font-black ${isDark ? "text-teal-400" : "text-teal-700"}`}>{skills.heading}</h2>
       </FloatingFrame>
 
       {skills.categories.map((category, i) => {
@@ -1293,10 +1300,10 @@ function SkillsRoom({ position, isDark = true }: { position: [number, number, nu
         return (
           <FloatingFrame key={i} position={[xPos, yPos, -4]} size={[5, 2.5]} isDark={isDark}>
             <div className="p-3 text-left">
-              <h3 className="text-teal-400 text-base font-semibold mb-2">{category.title}</h3>
-              <div className="flex flex-wrap gap-1">
+              <h3 className={`text-base font-black mb-3 ${isDark ? "text-teal-400" : "text-teal-700"}`}>{category.title}</h3>
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, j) => (
-                  <span key={j} className="bg-teal-500/20 text-teal-900 px-2 py-0.5 rounded text-xs">
+                  <span key={j} className={`px-2.5 py-1 rounded text-xs font-bold border ${isDark ? "bg-teal-500/20 text-teal-200 border-teal-500/30" : "bg-teal-100 text-teal-900 border-teal-200"}`}>
                     {skill}
                   </span>
                 ))}
@@ -1336,20 +1343,20 @@ function ExperienceRoom({ position, isDark = true }: { position: [number, number
           isDark={isDark}
         >
           <div className="p-3 text-left">
-            <div className="flex items-center gap-2 mb-2">
-              <span className={`w-2 h-2 rounded-full ${item.type === "work" ? "bg-teal-400" : "bg-purple-400"}`} />
-              <span className={`${isDark ? "text-gray-400" : "text-gray-600"} text-xs font-semibold`}>{item.period}</span>
+            <div className="flex items-center gap-2 mb-3">
+              <span className={`w-3 h-3 rounded-full ${item.type === "work" ? "bg-teal-500" : "bg-purple-500"}`} />
+              <span className={`${isDark ? "text-slate-300" : "text-slate-900"} text-xs font-black uppercase tracking-widest`}>{item.period}</span>
             </div>
-            <h3 className={`${isDark ? "text-white" : "text-slate-800"} text-lg font-bold leading-tight`}>{item.title}</h3>
-            <div className="flex items-center gap-3 mb-2 mt-1">
-              <p className="text-teal-400 text-sm font-medium m-0">{item.company}</p>
+            <h3 className={`${isDark ? "text-white" : "text-slate-950"} text-xl font-black leading-tight mb-1`}>{item.title}</h3>
+            <div className="flex items-center gap-3 mb-3 mt-1">
+              <p className={`text-sm font-bold m-0 ${isDark ? "text-teal-400" : "text-teal-700"}`}>{item.company}</p>
               {item.company === "REDDOT" && (
                 <img src="/reddot logo.png" alt="REDDOT Logo" className="h-6 w-auto object-contain rounded" />
               )}
             </div>
-            <ul className="space-y-1">
+            <ul className="space-y-2">
               {item.description.slice(0, 3).map((desc, j) => (
-                <li key={j} className={`${isDark ? "text-gray-300" : "text-gray-700"} text-xs leading-snug`}>
+                <li key={j} className={`${isDark ? "text-slate-200" : "text-slate-900"} text-xs font-medium leading-relaxed`}>
                   • {desc}
                 </li>
               ))}
@@ -1555,8 +1562,8 @@ export function House3D() {
       {/* UI Overlay */}
       <div className="absolute top-0 left-0 right-0 p-4 flex justify-between items-center z-10">
         <div className="flex items-center gap-2">
-          <div className="bg-background/80 backdrop-blur-sm rounded-lg px-4 py-2 border border-border">
-            <span className="text-primary font-semibold">{portfolioData.personal.name}</span>
+          <div className="bg-background/90 backdrop-blur-md rounded-xl px-6 py-3 border border-primary/20 shadow-[0_0_15px_rgba(20,184,166,0.3)]">
+            <span className="text-primary font-black text-xl uppercase tracking-[0.3em]">JAIKEERTHI</span>
           </div>
         </div>
         <ThemeToggle />
